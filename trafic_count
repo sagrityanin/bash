@@ -1,0 +1,133 @@
+date
+t=' 13:59'
+s=0
+
+
+again=y 
+ while [ "$again" = "y" ] #��дем в�полн��� �икл, пока $again б�де� �авно "yes"
+  do
+   echo "Please enter time ( 13:4):"
+    read time
+#     echo "The name you time is $time"
+#echo $time'1'
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'0'  | awk '{print $18}' | grep -v flow `
+echo $s1 > /home/andrey/s1
+#echo $time'0'
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+#echo $time
+#echo $ALLBYTES
+let "c = ALLBYTES / 1000000"
+echo $time'0'
+echo $c 'mB'
+echo '*******'     
+
+     
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'1'  | awk '{print $18}' # | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'1'
+echo $c 'mB'
+echo '*******'     
+     
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'2'  | awk '{print $18}' | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'2'
+echo $c 'mB'
+echo '*******'     
+
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'3'  | awk '{print $18}' | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'3'
+echo $c 'mB'
+echo '*******'     
+
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'4'  | awk '{print $18}' | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'4'
+echo $c 'mB'
+echo '*******'     
+
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'5'  | awk '{print $18}' | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'5'
+echo $c 'mB'
+echo '******'     
+
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'6'  | awk '{print $18}' | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'6'
+echo $c 'mB'
+echo '*******'     
+
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'7'  | awk '{print $18}' | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'7'
+echo $c 'mB'
+echo '*******'     
+
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'8'  | awk '{print $18}' | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'8'
+echo $c 'mB'
+echo '*******'     
+
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $time'9'  | awk '{print $18}' | grep -v flow `
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+let "c = ALLBYTES / 1000000"
+echo $time'9'
+echo $c 'mB'
+
+
+
+      echo "Do you wish to continue? y or no"
+       read again
+        done
+         echo "Bye-Bye"
+

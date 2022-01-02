@@ -1,0 +1,35 @@
+t=' 19:1'
+s=0
+
+
+again=y 
+ while [ "$again" = "y" ] #��дем в�полн��� �икл, пока $again б�де� �авно "yes"
+  do
+   date
+   echo "Please enter ip"
+    read ip
+     echo "Please enter time 13:12 "
+     read t
+     #echo $t
+
+ALLBYTES=0
+s1=`cat /var/log/iptraf/ttk | grep $ip  | grep $t | awk '{print $18}' ` #| grep -v flow `
+#s1=`cat /var/log/iptraf/common | grep ' 13:' | grep $ip  | awk '{print $18}' | grep -v flow `
+
+echo $s1 > /home/andrey/s1
+
+for b in $s1
+        do
+                    ALLBYTES=$((ALLBYTES+b))
+        done
+#echo $time
+#echo $ALLBYTES
+let "c = ALLBYTES / 1000000"
+echo $c 'mB'
+     
+     
+     
+      echo "Do you wish to continue? y or no"
+       read again
+        done
+         echo "Bye-Bye"
